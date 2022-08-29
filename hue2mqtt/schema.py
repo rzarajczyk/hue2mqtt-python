@@ -77,7 +77,7 @@ class GroupInfo(BaseModel):
     type: str
     state: GroupState
 
-    group_class: Optional[str] = Field(..., alias="class")
+    group_class: Optional[str] = Field(default=None, alias="class")
 
     action: LightState
 
@@ -105,7 +105,7 @@ class RotarySensorState(GenericSensorState):
 class SwitchSensorState(GenericSensorState):
     """Information about the state of a sensor."""
 
-    buttonevent: int
+    buttonevent: Optional[int]
 
 
 class LightLevelSensorState(GenericSensorState):
